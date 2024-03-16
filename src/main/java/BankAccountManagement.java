@@ -22,40 +22,9 @@ Como proyecto hemos creado una aplicación de gestión de cuentas banacarias.
  */
 
 
-import java.util.Scanner;
-
 public class BankAccountManagement {
     public static void main(String[] args) {
-
-            Scanner entrada = new Scanner(System.in);
-            int option;
-            Menu menu = new Menu();
-        do {
-
-            System.out.println("\n************* Bienvenido a nuestra banca en línea *****************\n");
-
-            System.out.println("1.- Crear nueva cuenta");
-            System.out.println("2.- Consultar saldo");
-            System.out.println("3.- Realizar deposito");
-            System.out.println("4.- Realizar retiro");
-            System.out.println("5.- Solicitar prestamo");
-            System.out.println("6.- Realizar pago de prestamo");
-            System.out.println("7.- Solicitar tarjeta de credito");
-            System.out.println("0.- Salir\n");
-            System.out.println("Ingrese el numero de la opcion que desea  obtener:");
-            option = entrada.nextInt();
-            if(option ==0 ){
-
-                System.out.println("\nGracias, hasta luego !!!!!");
-            } else if (option>0 && option<8){
-                menu.action(option);
-            }else {
-                System.out.println("\t\t ERROR!!!!!!");
-                System.out.println("Ingrese un numero entre 1 al 7");
-            }
-
-        } while(option !=0);
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.showMenu();
     }
-
-
 }

@@ -6,6 +6,7 @@ public class Administrator  implements IOperationAdministrator  {
     private Bank storeBank;
 
     public Administrator(Bank bank) {
+
         this.storeBank = bank;
     }
 
@@ -14,7 +15,6 @@ public class Administrator  implements IOperationAdministrator  {
 
         Scanner entrada = new Scanner(System.in);
         double amount;
-
 
         System.out.println("Ingrese los datos del cliente:");
         System.out.println("Nombre: ");
@@ -49,6 +49,7 @@ public class Administrator  implements IOperationAdministrator  {
 
         // Agregar el cliente al banco
         storeBank.addCustomer(newCustomer);
+        System.out.println(storeBank);
 
         System.out.println("Customer registered successfully.");
     }

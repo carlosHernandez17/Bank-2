@@ -25,6 +25,11 @@ public class Bank {
 
     public void showBalance(String AccountNo){
         ArrayList<Customer> List = getCustomerList();
+        if (List.isEmpty()) {
+            System.out.println("La lista de clientes está vacía.");
+        } else {
+            System.out.println("La lista de clientes no está vacía.");
+        }
         boolean accountFound = false; // Variable para indicar si se encontró la cuenta
         for (Customer customer : List) {
             for (Account account : customer.getAccounts()) {

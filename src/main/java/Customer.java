@@ -1,7 +1,7 @@
 import javax.xml.transform.Source;
 import java.util.ArrayList;
 
-public class Customer extends People implements  IOperationCustomer {
+public class Customer extends People {
     private String customerType;
     private ArrayList<Account> accounts;
 
@@ -22,18 +22,6 @@ public class Customer extends People implements  IOperationCustomer {
         return accounts;
     }
 
-    @Override
-    public void checkBalance(String accountNumber) {
-       /* Bank listClient =new Bank();
-
-        System.out.println("Account number: " + accountNumber);
-
-
-        System.out.println("check no null " + listClient.getCustomerList());
-*/
-
-
-    }
 
 
 }

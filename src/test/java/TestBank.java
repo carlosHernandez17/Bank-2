@@ -1,55 +1,17 @@
+import junit.framework.TestCase;
+import org.junit.Test;
+
 import java.util.ArrayList;
 
-public class Bank {
-    private final ArrayList<Customer> customerList;
+import static org.junit.Assert.assertEquals;
 
-    // Constructor
-    public Bank() {
-        this.customerList = new ArrayList<>();
+public class TestBank {
+    private Bank bank = new Bank();;
+    @Test
+    public void TestShowBalance(){
+       assertEquals(bank.showBalance(String.valueOf(1)), 1);
     }
-
-    // Método para agregar un cliente a la lista
-    public void addCustomer(Customer customer) {
-        if (customer != null) {
-            //System.out.println("Agregando cliente: " + customer.getName());
-            customerList.add(customer);
-        } else {
-            System.out.println("No se puede agregar un cliente nulo.");
-        }
-    }
-
-    public ArrayList<Customer> getCustomerList() {
-        return customerList;
-    }
-
-    public Object showBalance(String AccountNo){
-        ArrayList<Customer> List = getCustomerList();
-        if (List.isEmpty()) {
-            System.out.println("La lista de clientes está vacía.");
-        } else {
-            System.out.println("La lista de clientes no está vacía.");
-        }
-        boolean accountFound = false; // Variable para indicar si se encontró la cuenta
-        for (Customer customer : List) {
-            for (Account account : customer.getAccounts()) {
-                if (account.getAccountNumber().equals(AccountNo)) {
-                    accountFound = true;
-                    System.out.println("Nombre: " + customer.getName() + " " + customer.getLastName());
-                    System.out.println("Número de cuenta: " + account.getAccountNumber());
-                    System.out.println("Saldo disponible: " + account.getAmount());
-                    break;
-                }
-            }
-            if (accountFound) {
-                break;
-            }
-        }
-        if (!accountFound) {
-            System.out.println("La cuenta con el número " + AccountNo + " no fue encontrada.");
-        }
-        return 1;
-    }
-
+/*
     public void depositToAccount(String accountNumber, double depositAmount) {
         ArrayList<Customer> List = getCustomerList();
         boolean accountFound = false; // Variable para indicar si se encontró la cuenta
@@ -103,6 +65,5 @@ public class Bank {
             System.out.println("La cuenta con el número " + accountNumber + " no fue encontrada.");
         }
     }
-
+*/
 }
-

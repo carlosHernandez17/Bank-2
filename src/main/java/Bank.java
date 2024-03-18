@@ -74,7 +74,7 @@ public class Bank {
         }
     }
 
-    public void withdrawFromAccount(String accountNumber, double withdrawAmount) {
+    public Object withdrawFromAccount(String accountNumber) {
         boolean accountFound = false; // Variable para indicar si se encontró la cuenta
         for (Customer customer : getCustomerList() ) {
             for (Account account : customer.getAccounts()) {
@@ -83,6 +83,7 @@ public class Bank {
                     double currentAmount = account.getAmount();
 
                     // Verificar saldo
+                    double withdrawAmount = 0;
                     if (currentAmount >= withdrawAmount) {
                         double newAmount = currentAmount - withdrawAmount;
                         // Actualizar el saldo
@@ -102,6 +103,11 @@ public class Bank {
         if (!accountFound) {
             System.out.println("La cuenta con el número " + accountNumber + " no fue encontrada.");
         }
+        return 1;
+    }
+
+    public Object depositToAccount(String s) {
+        return 1;
     }
 
 }

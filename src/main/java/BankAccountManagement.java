@@ -4,7 +4,7 @@ public class BankAccountManagement {
         Bank bank = new Bank();
         Administrator administrator = new Administrator(bank);
         BankLoan bankLoan = new BankLoan();
-        ApplyforLoan applyforLoan = new ApplyforLoan(bankLoan);
+        ApplyforLoan applyforLoan = new ApplyforLoan();
 
 
         MenuOption[] options = new MenuOption[]{

@@ -1,15 +1,14 @@
-import java.util.Date;
 import java.util.Scanner;
 
 public class ApplyforLoan {
 
     private BankLoan request;
 
-    public ApplyforLoan(BankLoan request) {
+    public ApplyforLoan() {
         this.request = request;
     }
 
-    public void registerLoad(){
+    public Object registerLoad(String s){
         Scanner entrada = new Scanner(System.in);
         double amount;
 
@@ -36,5 +35,6 @@ public class ApplyforLoan {
         request.addLoan(newLoan);
 
         System.out.println("request registered successfully.");
+        return 1;
     }
 }

@@ -27,7 +27,7 @@ public class BankLoan {
             System.out.println("Esta vacio");
         }
         for (Loan loan : loanList) {
-            System.out.println("numero de prestamos "+ loan.getNoPrestamo());
+            //System.out.println("numero de prestamos "+ loan.getNoPrestamo());
             if (loan.getNoPrestamo().equals(account)) {
                 if (loan.getAmount() >= amount) {
                     loan.setAmount(loan.getAmount() - amount);

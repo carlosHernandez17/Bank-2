@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Administrator  implements IOperationAdministrator  {
 
     private Bank storeBank;
+    AccountGenerator generator = new AccountGenerator();
 
     public Administrator(Bank bank) {
 
@@ -29,8 +30,9 @@ public class Administrator  implements IOperationAdministrator  {
         String address = entrada.next();
         System.out.println("Contacto: ");
         String contact = entrada.next();
-        System.out.println("Ingrese el numero de cuenta: ");
-        String accountNumber = entrada.next();
+        String accountNumber = generator.numAccount();
+        System.out.println("Su  numero de cuenta es : "+ accountNumber);
+
         System.out.println("Ingrese el monto: ");
         amount = entrada.nextDouble();
         // Crear un nuevo objeto Customer

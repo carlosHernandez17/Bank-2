@@ -1,3 +1,5 @@
+import static java.lang.String.valueOf;
+
 public  class ApplyForLoanOption implements MenuOption {
     private final ApplyforLoan applyforLoan;
 
@@ -12,6 +14,6 @@ public  class ApplyForLoanOption implements MenuOption {
 
     @Override
     public void execute() {
-        applyforLoan.registerLoad();
+        applyforLoan.registerLoad(valueOf(1));
     }
 }

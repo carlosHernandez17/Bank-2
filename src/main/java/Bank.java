@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Bank {
     private final ArrayList<Customer> customerList;
@@ -23,7 +22,7 @@ public class Bank {
         return customerList;
     }
 
-    public void showBalance(String AccountNo){
+    public Object showBalance(String AccountNo){
         ArrayList<Customer> List = getCustomerList();
         if (List.isEmpty()) {
             System.out.println("La lista de clientes está vacía.");
@@ -48,6 +47,7 @@ public class Bank {
         if (!accountFound) {
             System.out.println("La cuenta con el número " + AccountNo + " no fue encontrada.");
         }
+        return 1;
     }
 
     public void depositToAccount(String accountNumber, double depositAmount) {
@@ -74,7 +74,7 @@ public class Bank {
         }
     }
 
-    public void withdrawFromAccount(String accountNumber, double withdrawAmount) {
+    public Object withdrawFromAccount(String accountNumber) {
         boolean accountFound = false; // Variable para indicar si se encontró la cuenta
         for (Customer customer : getCustomerList() ) {
             for (Account account : customer.getAccounts()) {
@@ -83,6 +83,7 @@ public class Bank {
                     double currentAmount = account.getAmount();
 
                     // Verificar saldo
+                    double withdrawAmount = 0;
                     if (currentAmount >= withdrawAmount) {
                         double newAmount = currentAmount - withdrawAmount;
                         // Actualizar el saldo
@@ -102,6 +103,11 @@ public class Bank {
         if (!accountFound) {
             System.out.println("La cuenta con el número " + accountNumber + " no fue encontrada.");
         }
+        return 1;
+    }
+
+    public Object depositToAccount(String s) {
+        return 1;
     }
 
 }

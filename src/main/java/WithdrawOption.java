@@ -20,7 +20,7 @@ public class WithdrawOption implements MenuOption {
         System.out.println("Ingrese la cantidad a retirar:\n");
         double remove = entrada.nextDouble();
         if (remove > 0.0) {
-            bank.withdrawFromAccount(noAcc, remove);
+            bank.withdrawFromAccount(noAcc);
         }
     }
 }

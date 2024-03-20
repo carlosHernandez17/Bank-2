@@ -23,7 +23,7 @@ public class MainMenu {
             option = entrada.nextInt();
 
             if (option == 0) {
-                System.out.println("\nGracias, hasta luego !!!!!");
+                System.out.println("\n Gracias, hasta luego !!!!!");
             } else if (option > 0 && option <= options.length) {
                 options[option - 1].execute();
             } else {

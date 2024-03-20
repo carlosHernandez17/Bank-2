@@ -10,8 +10,8 @@ public class BankLoan {
 
     public void addLoan(Loan loan) {
         if (loan != null) {
-            //System.out.println("Agregando cliente: " + customer.getName());
-            loanList.add(loan);
+
+           loanList.add(loan);
         } else {
             System.out.println("No se puede agregar la solicitud del prestamo.");
         }
@@ -23,7 +23,11 @@ public class BankLoan {
 
 
     public void payLoan(String account, double amount) {
+        if (getLoanList().isEmpty()){
+            System.out.println("Esta vacio");
+        }
         for (Loan loan : loanList) {
+            System.out.println("numero de prestamos "+ loan.getNoPrestamo());
             if (loan.getNoPrestamo().equals(account)) {
                 if (loan.getAmount() >= amount) {
                     loan.setAmount(loan.getAmount() - amount);

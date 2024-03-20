@@ -1,12 +1,16 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class ApplyforLoan {
 
     private BankLoan request;
 
-    public ApplyforLoan() {
-        this.request = request;
+    public ApplyforLoan(BankLoan request) {
+          this.request = request;
     }
+
+
+
 
     public Object registerLoad(String s){
         Scanner entrada = new Scanner(System.in);
@@ -21,7 +25,7 @@ public class ApplyforLoan {
         String number = entrada.next();
         System.out.println("cual es la Fecha de inicio de Prestamo? ");
         String start = entrada.next();
-        System.out.println("cual es la Fecha de inicio de Prestamo? ");
+        System.out.println("cual es la Fecha de Finalizacion de Prestamo? ");
         String end = entrada.next();
 
         Loan newLoan = new Loan(
@@ -32,7 +36,9 @@ public class ApplyforLoan {
                 end
         );
 
+        //request.addLoan(newLoan);
         request.addLoan(newLoan);
+
 
         System.out.println("request registered successfully.");
         return 1;

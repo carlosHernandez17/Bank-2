@@ -74,7 +74,7 @@ public class Bank {
         }
     }
 
-    public Object withdrawFromAccount(String accountNumber) {
+    public Object withdrawFromAccount(String accountNumber, double withdraw ) {
         boolean accountFound = false; // Variable para indicar si se encontró la cuenta
         for (Customer customer : getCustomerList() ) {
             for (Account account : customer.getAccounts()) {
@@ -85,10 +85,10 @@ public class Bank {
                     // Verificar saldo
                     double withdrawAmount = 0;
                     if (currentAmount >= withdrawAmount) {
-                        double newAmount = currentAmount - withdrawAmount;
+                        double newAmount = currentAmount - withdraw;
                         // Actualizar el saldo
                         account.setAmount(newAmount);
-                        System.out.println("Se ha retirado " + withdrawAmount + " de la cuenta " + accountNumber + ".");
+                        System.out.println("Se ha retirado " + withdraw + " de la cuenta " + accountNumber + ".");
                         System.out.println("Nuevo saldo disponible: " + newAmount);
                     } else {
                         System.out.println("Saldo insuficiente para realizar el retiro.");

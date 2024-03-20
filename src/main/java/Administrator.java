@@ -49,7 +49,7 @@ public class Administrator  implements IOperationAdministrator  {
 
         // Agregar el cliente al banco
         storeBank.addCustomer(newCustomer);
-        
+
         System.out.println("Customer registered successfully.");
     }
 

@@ -18,7 +18,7 @@ public class TestBank {
     }
     @Test
     public void TestWithdrawFromAccount() {
-        assertEquals(bank.withdrawFromAccount(valueOf(1)),1);
+        assertEquals(bank.withdrawFromAccount(valueOf(1), 100),1);
     }
 
 }

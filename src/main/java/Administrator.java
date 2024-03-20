@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class Administrator  implements IOperationAdministrator  {
@@ -51,10 +53,28 @@ public class Administrator  implements IOperationAdministrator  {
         storeBank.addCustomer(newCustomer);
 
         System.out.println("Customer registered successfully.");
+
+        Customer customer = new Customer();
+
     }
 
 
-
+    @Override
+    public void removeCustomer( String accountNumber ) {
+        for (Customer customer : storeBank.getCustomerList()) {
+            if (customer.getAccounts().equals(accountNumber)) {
+                Iterator<Account> it = customer.getAccounts().iterator();
+                while (it.hasNext()) {
+                    Account account = it.next();
+                    if (account.getAccountNumber().equals(accountNumber)) {
+                        it.remove();
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    }
 
 
 
@@ -81,7 +101,6 @@ public class Administrator  implements IOperationAdministrator  {
 
             System.out.println("Account not found.");
         }
-
-*/
+    */
 
 }

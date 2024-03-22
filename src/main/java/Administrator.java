@@ -56,7 +56,7 @@ public class Administrator  implements IOperationAdministrator  {
 
         System.out.println("Customer registered successfully.");
 
-        Customer customer = new Customer();
+       // Customer customer = new Customer();
 
     }
 
@@ -78,31 +78,5 @@ public class Administrator  implements IOperationAdministrator  {
         }
     }
 
-
-
-  /*  @Override
-    public void removeCustomers( String accountNumber ) {
-
-            // Iterar sobre la lista de clientes
-            for (Customer customer : customerList) {
-                // Obtener la lista de cuentas del cliente
-                ArrayList<Account> accounts = customer.getAccounts();
-
-                for (int i = 0; i < accounts.size(); i++) {
-
-                    Account account = accounts.get(i);
-                    // Comprobar si el número de cuenta coincide
-                    if (account.getAccountNumber().equals(accountNumber)) {
-
-                        accounts.remove(i);
-                        System.out.println("Account removed successfully.");
-                        return;
-                    }
-                }
-            }
-
-            System.out.println("Account not found.");
-        }
-    */
 
 }

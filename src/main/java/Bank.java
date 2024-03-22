@@ -24,20 +24,17 @@ public class Bank {
 
     public Object showBalance(String AccountNo){
         ArrayList<Customer> List = getCustomerList();
-        if (List.isEmpty()) {
-            System.out.println("La lista de clientes está vacía.");
-        } else {
-            System.out.println("La lista de clientes no está vacía.");
-        }
         boolean accountFound = false; // Variable para indicar si se encontró la cuenta
         for (Customer customer : List) {
             for (Account account : customer.getAccounts()) {
                 if (account.getAccountNumber().equals(AccountNo)) {
                     accountFound = true;
+                    String num = account.getAccountNumber();
                     System.out.println("Nombre: " + customer.getName() + " " + customer.getLastName());
                     System.out.println("Número de cuenta: " + account.getAccountNumber());
                     System.out.println("Saldo disponible: " + account.getAmount());
-                    break;
+                    return num;
+                    //break;
                 }
             }
             if (accountFound) {
@@ -47,10 +44,10 @@ public class Bank {
         if (!accountFound) {
             System.out.println("La cuenta con el número " + AccountNo + " no fue encontrada.");
         }
-        return 1;
+        return "Cuenta no encontrada";
     }
 
-    public void depositToAccount(String accountNumber, double depositAmount) {
+    public double depositToAccount(String accountNumber, double depositAmount) {
         ArrayList<Customer> List = getCustomerList();
         boolean accountFound = false; // Variable para indicar si se encontró la cuenta
         for (Customer customer : List) {
@@ -62,7 +59,8 @@ public class Bank {
                     account.setAmount(newAmount);
                     System.out.println("Se ha depositado " + depositAmount + " a la cuenta " + accountNumber + ".");
                     System.out.println("Nuevo saldo disponible: " + newAmount);
-                    break; // Se sale del bucle
+                    return newAmount;
+                   // break; // Se sale del bucle
                 }
             }
             if (accountFound) {
@@ -72,9 +70,10 @@ public class Bank {
         if (!accountFound) {
             System.out.println("La cuenta con el número " + accountNumber + " no fue encontrada.");
         }
+        return depositAmount;
     }
 
-    public Object withdrawFromAccount(String accountNumber, double withdraw ) {
+    public double withdrawFromAccount(String accountNumber, double withdraw ) {
         boolean accountFound = false; // Variable para indicar si se encontró la cuenta
         for (Customer customer : getCustomerList() ) {
             for (Account account : customer.getAccounts()) {
@@ -90,10 +89,12 @@ public class Bank {
                         account.setAmount(newAmount);
                         System.out.println("Se ha retirado " + withdraw + " de la cuenta " + accountNumber + ".");
                         System.out.println("Nuevo saldo disponible: " + newAmount);
+                        return newAmount;
                     } else {
                         System.out.println("Saldo insuficiente para realizar el retiro.");
+                        return currentAmount;
                     }
-                    break;
+
                 }
             }
             if (accountFound) {
@@ -103,7 +104,7 @@ public class Bank {
         if (!accountFound) {
             System.out.println("La cuenta con el número " + accountNumber + " no fue encontrada.");
         }
-        return 1;
+        return 0;
     }
 
     public Object depositToAccount(String s) {

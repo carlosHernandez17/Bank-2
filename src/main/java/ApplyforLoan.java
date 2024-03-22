@@ -20,16 +20,8 @@ public class ApplyforLoan {
 
 
 
-    public Object registerLoad(String s){
-        Scanner entrada = new Scanner(System.in);
-        double amount;
-
-        System.out.println("Ingrese los datos para el prestamo");
-
-
-        System.out.println("Cuanto desea prestar?: ");
-        amount = entrada.nextDouble();
-        String moneda = "Dolar US ($) ";
+    public Object registerLoad(double amount){
+       String moneda = "Dolar US ($) ";
         String number = generator.numAccount();
         String start = sdf.format(fechaActual)+"";
         String end = fechaEn5Meses+"";
@@ -54,6 +46,6 @@ public class ApplyforLoan {
 
 
         System.out.println("\n\nrequest registered successfully.");
-        return 1;
+        return 1 ;
     }
 }

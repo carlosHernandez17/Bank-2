@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import static java.lang.String.valueOf;
 
 public  class ApplyForLoanOption implements MenuOption {
@@ -14,6 +16,11 @@ public  class ApplyForLoanOption implements MenuOption {
 
     @Override
     public void execute() {
-        applyforLoan.registerLoad(valueOf(1));
+        Scanner entrada = new Scanner(System.in);
+        double amount;
+        System.out.println("Ingrese los datos para el prestamo");
+        System.out.println("Cuanto desea prestar?: ");
+        amount = entrada.nextDouble();
+        applyforLoan.registerLoad(amount);
     }
 }

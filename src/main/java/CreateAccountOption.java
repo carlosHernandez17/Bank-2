@@ -6,6 +6,10 @@ public class CreateAccountOption implements MenuOption {
         this.administrator = administrator;
     }
 
+    public CreateAccountOption() {
+
+    }
+
     @Override
     public String getDescription() {
         return "Crear nueva cuenta";

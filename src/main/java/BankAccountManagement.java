@@ -25,15 +25,6 @@ public class BankAccountManagement {
 
 
         MenuOption[] options = new MenuOption[]{
-<<<<<<< HEAD
-                new CreateAccountOption(administrator),
-                new CheckBalanceOption(bank),
-                new DepositOption(bank),
-                new WithdrawOption(bank),
-                new ApplyForLoanOption(applyforLoan),
-                new PayLoanOption(bankLoan),
-                new RequestCreditCardOption(bankLoan, bank)
-=======
                 createAccount,
                 checkBalance,
                 deposit,
@@ -41,7 +32,7 @@ public class BankAccountManagement {
                 applyForLoan,
                 payLoan,
                 requestCredictCard
->>>>>>> carlos
+
         };
 
         MainMenu mainMenu = new MainMenu(options);

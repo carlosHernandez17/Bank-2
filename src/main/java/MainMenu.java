@@ -22,16 +22,6 @@
                 System.out.println("Ingrese el numero de la opcion que desea obtener:");
                 option = entrada.nextInt();
 
-<<<<<<< HEAD
-            if (option == 0) {
-                System.out.println("\n Gracias, hasta luego !!!!!");
-            } else if (option > 0 && option <= options.length) {
-                options[option - 1].execute();
-            } else {
-                System.out.println("\t\t ERROR!!!!!!");
-                System.out.println("Ingrese un numero entre 1 al " + options.length);
-            }
-=======
                 if (option == 0) {
                     System.out.println("\nGracias, hasta luego !!!!!");
                 } else if (option > 0 && option <= options.length) {
@@ -40,7 +30,7 @@
                     System.out.println("\t\t ERROR!!!!!!");
                     System.out.println("Ingrese un numero entre 1 al " + options.length);
                 }
->>>>>>> carlos
+
 
             } while (option != 0);
         }

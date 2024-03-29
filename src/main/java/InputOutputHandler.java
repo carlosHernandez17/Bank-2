@@ -8,6 +8,7 @@ public class InputOutputHandler {
         this.scanner = new Scanner(System.in);
     }
 
+    //Muestra el menu
     public void printMenu(MenuOption[] options) {
         System.out.println("\n************* Bienvenido a nuestra banca en línea *****************\n");
         for (int i = 0; i < options.length; i++) {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class TestAdminsitrator {
+public class TestAdministrator {
     private Bank storeBank = new Bank();
 
     @Test
